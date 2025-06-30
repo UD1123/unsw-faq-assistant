@@ -1,0 +1,105 @@
+#openChatBtn {
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#chatModal {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 320px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.chat-header {
+  background-color: #f5f5f5;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  cursor: move; /* 支持拖拽时的鼠标样式 */
+  user-select: none;
+}
+
+.chatBox {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.message.user {
+  color: #0066cc;
+}
+
+.message.bot {
+  color: #2e7d32;
+}
+
+.message.bot.error {
+  color: #d32f2f;
+}
+
+.input-group {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+#userInput {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.input-group button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.suggestions {
+  max-height: 80px;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+  padding: 4px 10px;
+}
+
+.suggestion-item {
+  padding: 4px;
+  cursor: pointer;
+  color: #333;
+}
+
+.suggestion-item:hover {
+  background-color: #eee;
+}
+
+.loader {
+  font-style: italic;
+  color: gray;
+}

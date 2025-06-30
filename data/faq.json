@@ -1,0 +1,30 @@
+[
+  {
+    "question_keywords": ["reset password", "forgot password", "change password"],
+    "answer": "You can reset your password using the [UNSW Identity Manager](https://iam.unsw.edu.au)."
+  },
+  {
+    "question_keywords": ["zid", "student id", "id reset", "forgot zid"],
+    "answer": "You can recover or reset your zID at the [UNSW Identity Manager](https://iam.unsw.edu.au)."
+  },
+  {
+    "question_keywords": ["invoice", "receipt", "reimbursement", "payment proof"],
+    "answer": "Invoices can be submitted through [myUNSW Reimbursement](https://my.unsw.edu.au)."
+  },
+  {
+    "question_keywords": ["timetable", "schedule", "class time", "class schedule"],
+    "answer": "You can view and manage your class timetable in [myUNSW Timetable](https://my.unsw.edu.au)."
+  },
+  {
+    "question_keywords": ["moodle", "course website", "assignment upload"],
+    "answer": "All course materials and assessments can be accessed via [UNSW Moodle](https://moodle.telt.unsw.edu.au)."
+  },
+  {
+    "question_keywords": ["enrol", "drop course", "add course", "register course", "enrollment"],
+    "answer": "To enroll, drop, or swap courses, visit [UNSW Enrollment Portal](https://my.unsw.edu.au)."
+  },
+  {
+    "question_keywords": ["it support", "technical issue", "computer", "network", "wifi", "email"],
+    "answer": "For any IT issues, contact UNSW IT Support via [it@unsw.edu.au](mailto:it@unsw.edu.au)."
+  }
+]
