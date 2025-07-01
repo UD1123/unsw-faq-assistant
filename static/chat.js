@@ -77,7 +77,7 @@
     clearSuggestions();
 
     try {
-      const response = await fetch("/chat", {
+      const response = await fetch("https://unsw-faq-assistant.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }),
@@ -133,7 +133,7 @@
       return;
     }
 
-    const response = await fetch("/suggest", {
+    const response = await fetch("https://unsw-faq-assistant.onrender.com/suggest", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prefix: keyword }),
