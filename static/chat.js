@@ -1,4 +1,6 @@
 (() => {
+  let currentMode = "faq"; // faq 或 gpt
+
   // 创建按钮
   const btn = document.createElement("button");
   btn.id = "openChatBtn";
@@ -10,7 +12,8 @@
   modal.id = "chatModal";
   modal.innerHTML = `
     <div class="chat-header" id="chatHeader">
-      UNSW Intelligent FAQ Assistant 
+      UNSW Intelligent Assistant
+      <span id="modeToggleBtn">⚙️ Mode</span>
       <span id="closeBtn">✖</span>
     </div>
     <div class="chatBox" id="chatBox"></div>
@@ -22,12 +25,12 @@
   `;
   document.body.appendChild(modal);
 
-  // 显示弹窗并发送欢迎语（仅第一次点击时触发）
+  // 显示弹窗并发送欢迎语（仅第一次点击）
   let greeted = false;
   btn.addEventListener("click", () => {
     modal.style.display = "block";
     if (!greeted) {
-      appendMessage("Assistant", "Hi there! 👋 I’m your UNSW Intelligent FAQ Assistant. How can I help you today?😊", "bot");
+      appendMessage("Assistant", "Hi there! 👋 I’m your UNSW Intelligent FAQ Assistant. How can I help you today? 😊", "bot");
       greeted = true;
     }
   });
@@ -37,11 +40,19 @@
     modal.style.display = "none";
   });
 
+  // 模式切换
+  document.querySelector("#modeToggleBtn").addEventListener("click", () => {
+    currentMode = currentMode === "faq" ? "gpt" : "faq";
+    const switchMsg = currentMode === "faq"
+      ? "Switched to FAQ Mode (keyword matching)."
+      : "Switched to GPT mode (powered by ChatGPT)";
+    appendMessage("Assistant", switchMsg, "bot");
+  });
+
   // 拖拽逻辑
   const header = document.getElementById("chatHeader");
   let isDragging = false;
-  let offsetX = 0;
-  let offsetY = 0;
+  let offsetX = 0, offsetY = 0;
 
   header.addEventListener("mousedown", (e) => {
     isDragging = true;
@@ -77,11 +88,15 @@
     clearSuggestions();
 
     try {
-      const response = await fetch("https://unsw-faq-assistant.onrender.com/chat", {
+      const url = currentMode === "faq" ? "/chat" : "/chatgpt";
+      const payload = currentMode === "faq" ? { message } : { question: message };
+
+      const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify(payload),
       });
+
       const data = await response.json();
       appendMessage("Assistant", parseMarkdown(data.answer), "bot");
     } catch (error) {
@@ -91,7 +106,7 @@
     hideLoader();
   }
 
-  // 渲染 Markdown
+  // Markdown 渲染
   function parseMarkdown(text) {
     return text
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
@@ -108,7 +123,7 @@
     chatBox.scrollTop = chatBox.scrollHeight;
   }
 
-  // 显示加载动画
+  // 加载动画
   function showLoader() {
     const chatBox = document.getElementById("chatBox");
     const loader = document.createElement("div");
@@ -124,16 +139,16 @@
     if (loader) loader.remove();
   }
 
-  // 联想推荐
+  // 联想推荐（仅FAQ模式启用）
   const inputField = document.getElementById("userInput");
   inputField.addEventListener("input", async () => {
     const keyword = inputField.value.trim();
-    if (!keyword) {
+    if (currentMode !== "faq" || !keyword) {
       clearSuggestions();
       return;
     }
 
-    const response = await fetch("https://unsw-faq-assistant.onrender.com/suggest", {
+    const response = await fetch("/suggest", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prefix: keyword }),
@@ -161,6 +176,5 @@
     document.getElementById("suggestions").innerHTML = "";
   }
 
-  // 全局导出
   window.sendMessage = sendMessage;
 })();
