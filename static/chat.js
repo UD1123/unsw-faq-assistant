@@ -1,6 +1,8 @@
 (() => {
   let currentMode = "faq"; // faq 或 gpt
 
+  const BASE_URL = "https://unsw-faq-assistant.onrender.com";
+
   // 创建按钮
   const btn = document.createElement("button");
   btn.id = "openChatBtn";
@@ -25,7 +27,6 @@
   `;
   document.body.appendChild(modal);
 
-  // 显示弹窗并发送欢迎语（仅第一次点击）
   let greeted = false;
   btn.addEventListener("click", () => {
     modal.style.display = "block";
@@ -35,12 +36,10 @@
     }
   });
 
-  // 关闭弹窗
   document.querySelector("#closeBtn").addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // 模式切换
   document.querySelector("#modeToggleBtn").addEventListener("click", () => {
     currentMode = currentMode === "faq" ? "gpt" : "faq";
     const switchMsg = currentMode === "faq"
@@ -76,7 +75,6 @@
     document.body.style.userSelect = "";
   });
 
-  // 发送消息
   async function sendMessage() {
     const input = document.getElementById("userInput");
     const message = input.value.trim();
@@ -88,10 +86,10 @@
     clearSuggestions();
 
     try {
-      const url = currentMode === "faq" ? "/chat" : "/chatgpt";
+      const endpoint = currentMode === "faq" ? "/chat" : "/chatgpt";
       const payload = currentMode === "faq" ? { message } : { question: message };
 
-      const response = await fetch(url, {
+      const response = await fetch(`${BASE_URL}${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -106,14 +104,12 @@
     hideLoader();
   }
 
-  // Markdown 渲染
   function parseMarkdown(text) {
     return text
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
       .replace(/\n/g, "<br>");
   }
 
-  // 显示消息
   function appendMessage(sender, text, cls) {
     const chatBox = document.getElementById("chatBox");
     const div = document.createElement("div");
@@ -123,7 +119,6 @@
     chatBox.scrollTop = chatBox.scrollHeight;
   }
 
-  // 加载动画
   function showLoader() {
     const chatBox = document.getElementById("chatBox");
     const loader = document.createElement("div");
@@ -139,7 +134,6 @@
     if (loader) loader.remove();
   }
 
-  // 联想推荐（仅FAQ模式启用）
   const inputField = document.getElementById("userInput");
   inputField.addEventListener("input", async () => {
     const keyword = inputField.value.trim();
@@ -148,11 +142,12 @@
       return;
     }
 
-    const response = await fetch("/suggest", {
+    const response = await fetch(`${BASE_URL}/suggest`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prefix: keyword }),
     });
+
     const data = await response.json();
     renderSuggestions(data.suggestions || []);
   });
