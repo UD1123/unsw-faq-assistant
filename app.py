@@ -2,12 +2,12 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import os
 import json
-import openai
+from openai import OpenAI
 from dotenv import load_dotenv
 
 # 加载环境变量
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
@@ -35,8 +35,8 @@ def chat_with_gpt():
     user_message = data.get("question", "")
 
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+        response = client.chat.completions.create(
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_message}
