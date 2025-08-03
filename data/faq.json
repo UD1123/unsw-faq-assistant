@@ -112,12 +112,12 @@
   {
   "question_full": "Where can I find onboarding materials?",
   "question_keywords": ["materials", "resources", "documents", "information"],
-  "answer": "All onboarding materials are available here: <a href='http://localhost:8000/#/material' target='_blank'>Material Page</a>."
+  "answer": "All onboarding materials are available here: <a href='http://localhost:8000/#/products' target='_blank'>Material Page</a>."
   },
   {
   "question_full": "How can I update my profile?",
   "question_keywords": ["profile", "edit profile", "my profile", "update user"],
-  "answer": "You can update your personal profile here: <a href='http://localhost:8000/#/myprofile' target='_blank'>My Profile</a>."
+  "answer": "You can update your personal profile here: <a href='http://localhost:8000/#/ProfileEdit' target='_blank'>My Profile</a>."
   },
   {
   "question_full": "Where can I give feedback?",
