@@ -1,30 +1,127 @@
 [
   {
-    "question_keywords": ["reset password", "forgot password", "change password"],
+    "question_full": "How do I reset my UNSW password?",
+    "question_keywords": ["reset password", "forgot password", "change password", "password issue", "login problem"],
     "answer": "You can reset your password using the [UNSW Identity Manager](https://iam.unsw.edu.au)."
   },
   {
-    "question_keywords": ["zid", "student id", "id reset", "forgot zid"],
+    "question_full": "What should I do if I forgot my zID?",
+    "question_keywords": ["zid", "student id", "id reset", "forgot zid", "lost zid", "student number"],
     "answer": "You can recover or reset your zID at the [UNSW Identity Manager](https://iam.unsw.edu.au)."
   },
   {
-    "question_keywords": ["invoice", "receipt", "reimbursement", "payment proof"],
-    "answer": "Invoices can be submitted through [myUNSW Reimbursement](https://my.unsw.edu.au)."
+    "question_full": "Where can I access my invoice or receipt for reimbursement?",
+    "question_keywords": ["invoice", "receipt", "reimbursement", "payment proof", "fee statement"],
+    "answer": "Invoices and payment documents can be managed through [myUNSW Reimbursement](https://my.unsw.edu.au)."
   },
   {
-    "question_keywords": ["timetable", "schedule", "class time", "class schedule"],
+    "question_full": "Where can I view my class timetable?",
+    "question_keywords": ["timetable", "schedule", "class time", "class schedule", "class clash"],
     "answer": "You can view and manage your class timetable in [myUNSW Timetable](https://my.unsw.edu.au)."
   },
   {
-    "question_keywords": ["moodle", "course website", "assignment upload"],
+    "question_full": "How can I submit an assignment on Moodle?",
+    "question_keywords": ["moodle", "course website", "course information", "assignment submission", "submit assignment"],
     "answer": "All course materials and assessments can be accessed via [UNSW Moodle](https://moodle.telt.unsw.edu.au)."
   },
   {
-    "question_keywords": ["enrol", "drop course", "add course", "register course", "enrollment"],
-    "answer": "To enroll, drop, or swap courses, visit [UNSW Enrollment Portal](https://my.unsw.edu.au)."
+    "question_full": "How do I enrol, drop or change courses?",
+    "question_keywords": ["enrol", "drop course", "add course", "register course", "enrollment", "change course"],
+    "answer": "To enroll, drop, or swap courses, visit the [UNSW Enrollment Portal](https://my.unsw.edu.au)."
   },
   {
-    "question_keywords": ["it support", "technical issue", "computer", "network", "wifi", "email"],
+    "question_full": "Where can I get IT support at UNSW?",
+    "question_keywords": ["it support", "technical issue", "computer", "network", "wifi", "email", "printer"],
     "answer": "For any IT issues, contact UNSW IT Support via [it@unsw.edu.au](mailto:it@unsw.edu.au)."
+  },
+  {
+    "question_full": "How do I manage my student visa or CoE?",
+    "question_keywords": ["student visa", "coe", "confirmation of enrolment", "visa issue", "extend visa"],
+    "answer": "You can manage your student visa and CoE through [UNSW Student Services](https://student.unsw.edu.au/visa)."
+  },
+  {
+    "question_full": "How to request an academic transcript?",
+    "question_keywords": ["academic transcript", "get transcript", "official transcript", "academic record"],
+    "answer": "You can request your official academic transcript through [myUNSW Academic Records](https://my.unsw.edu.au)."
+  },
+  {
+    "question_full": "Where to check my tuition fee deadline?",
+    "question_keywords": ["fee", "tuition", "payment deadline", "tuition fee", "fee due", "how to pay"],
+    "answer": "You can check your tuition fees and due dates on [UNSW Fee Page](https://student.unsw.edu.au/fees)."
+  },
+  {
+    "question_full": "How do I replace a lost student card?",
+    "question_keywords": ["student card", "lost student card", "new student card", "replace student id"],
+    "answer": "You can apply for or replace your student card via the [UNSW Student ID Services](https://student.unsw.edu.au/student-card)."
+  },
+  {
+    "question_full": "What is considered plagiarism at UNSW?",
+    "question_keywords": ["plagiarism", "academic integrity", "turnitin", "cheating", "similarity", "copy"],
+    "answer": "UNSW has strict academic integrity policies. Visit the [Academic Integrity Guide](https://student.unsw.edu.au/academic-integrity)."
+  },
+  {
+    "question_full": "Where can I find internship or WIL opportunities?",
+    "question_keywords": ["internship", "work integrated learning", "WIL", "industry placement", "career ready"],
+    "answer": "For internship and WIL programs, visit [UNSW Employability](https://www.employability.unsw.edu.au/)."
+  },
+  {
+    "question_full": "How to apply for graduation at UNSW?",
+    "question_keywords": ["graduation", "apply to graduate", "commencement", "degree complete", "graduation date"],
+    "answer": "You can apply to graduate and check dates at the [UNSW Graduation Portal](https://student.unsw.edu.au/graduation)."
+  },
+  {
+    "question_full": "How do I borrow or renew books from the UNSW Library?",
+    "question_keywords": ["library", "borrow book", "library access", "renew book", "library hours"],
+    "answer": "Visit [UNSW Library](https://www.library.unsw.edu.au/) to borrow, renew books and access online resources."
+  },
+  {
+    "question_full": "How do I apply for special consideration?",
+    "question_keywords": ["special consideration", "extension", "late assignment", "illness", "apply for extension"],
+    "answer": "You can apply for special consideration at [UNSW Special Consideration](https://student.unsw.edu.au/special-consideration)."
+  },
+  {
+    "question_full": "Where can I find student support or counselling?",
+    "question_keywords": ["student support", "mental health", "counselling", "wellbeing", "help"],
+    "answer": "UNSW offers support via [Student Support Services](https://student.unsw.edu.au/wellbeing) including free counselling."
+  },
+  {
+    "question_full": "Where can I find parking information on campus?",
+    "question_keywords": ["parking", "campus parking", "parking permit", "car park", "bike parking"],
+    "answer": "Parking information is available at [UNSW Parking Services](https://www.facilities.unsw.edu.au/parking)."
+  },
+  {
+    "question_full": "What is MyAccess and how do I use it?",
+    "question_keywords": ["myaccess", "remote desktop", "virtual labs", "unsw apps", "access school software"],
+    "answer": "You can use UNSW MyAccess to access school software from anywhere: [https://myaccess.unsw.edu.au](https://myaccess.unsw.edu.au)."
+  },
+  {
+    "question_full": "How to access or setup my UNSW student email?",
+    "question_keywords": ["student email", "email access", "email setup", "outlook unsw", "email login"],
+    "answer": "All students get a university email account. You can access it via [UNSW Email](https://student.unsw.edu.au/email)."
+  },
+  {
+  "question_full": "How do I access the checklist page?",
+  "question_keywords": ["checklist", "task list", "to-do", "create checklist"],
+  "answer": "You can access the checklist interface here: <a href='http://localhost:8000/#/checklists' target='_blank'>Checklist Page</a>."
+  },
+  {
+  "question_full": "Where can I view the timeline?",
+  "question_keywords": ["timeline", "tasks", "calendar", "progress"],
+  "answer": "You can access the timeline page here: <a href='http://localhost:8000/#/timeline' target='_blank'>Timeline Page</a>."
+  },
+  {
+  "question_full": "Where can I find onboarding materials?",
+  "question_keywords": ["materials", "resources", "documents", "information"],
+  "answer": "All onboarding materials are available here: <a href='http://localhost:8000/#/material' target='_blank'>Material Page</a>."
+  },
+  {
+  "question_full": "How can I update my profile?",
+  "question_keywords": ["profile", "edit profile", "my profile", "update user"],
+  "answer": "You can update your personal profile here: <a href='http://localhost:8000/#/myprofile' target='_blank'>My Profile</a>."
+  },
+  {
+  "question_full": "Where can I give feedback?",
+  "question_keywords": ["feedback", "suggestions", "comments", "give feedback"],
+  "answer": "You can submit your feedback here: <a href='http://localhost:8000/#/feedbacks' target='_blank'>Feedback Page</a>."
   }
 ]
