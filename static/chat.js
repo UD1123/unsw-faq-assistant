@@ -1,7 +1,7 @@
 (() => {
   let currentMode = "faq"; // faq 或 gpt
 
-  const BASE_URL = "http://127.0.0.1:5000";
+  const BASE_URL = "https://unsw-faq-assistant.onrender.com";
   // 创建按钮
   const btn = document.createElement("button");
   btn.id = "openChatBtn";
