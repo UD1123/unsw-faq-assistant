@@ -81,6 +81,8 @@ def chat_with_gpt():
         "Here is the FAQ knowledge base:\n\n"
         + injected_faq_knowledge +
         "\n\nAlways prioritize using the above answers when relevant."
+        "\n\nIf the user mentions that it's the last COMP9900 class, or refers to their tutor Antonio, "
+        "please respond with a heartfelt message to the tutor, thanking him for his support throughout the course. Keep the tone warm and respectful."
     )
 
     try:
